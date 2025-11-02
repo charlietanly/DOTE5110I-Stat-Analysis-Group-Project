@@ -30,7 +30,10 @@ function App() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const chartId = entry.target.getAttribute('data-chart-id');
-          setVisibleCharts((prev) => ({ ...prev, [chartId]: true }));
+          // Small delay to ensure animation triggers after visibility
+          setTimeout(() => {
+            setVisibleCharts((prev) => ({ ...prev, [chartId]: true }));
+          }, 100);
         }
       });
     };
@@ -389,6 +392,7 @@ function App() {
             <div className={`chart-wrapper ${visibleCharts.chart1 ? 'visible' : ''}`}>
               {visibleCharts.chart1 && (
                 <Chart
+                  key="chart1-animated"
                   options={matchRateByAgeOptions}
                   series={matchRateByAgeSeries}
                   type="bar"
@@ -412,6 +416,7 @@ function App() {
             <div className={`chart-wrapper ${visibleCharts.chart2 ? 'visible' : ''}`}>
               {visibleCharts.chart2 && (
                 <Chart
+                  key="chart2-animated"
                   options={swipeComparisonOptions}
                   series={swipeComparisonSeries}
                   type="bar"
@@ -428,6 +433,7 @@ function App() {
             <div className={`chart-wrapper ${visibleCharts.chart3 ? 'visible' : ''}`}>
               {visibleCharts.chart3 && (
                 <Chart
+                  key="chart3-animated"
                   options={swipePercentageOptions}
                   series={swipePercentageSeries}
                   type="bar"
@@ -451,6 +457,7 @@ function App() {
             <div className={`chart-wrapper ${visibleCharts.chart4 ? 'visible' : ''}`}>
               {visibleCharts.chart4 && (
                 <Chart
+                  key="chart4-animated"
                   options={ghostingOptions}
                   series={ghostingSeries}
                   type="bar"
@@ -467,6 +474,7 @@ function App() {
             <div className={`chart-wrapper ${visibleCharts.chart5 ? 'visible' : ''}`}>
               {visibleCharts.chart5 && (
                 <Chart
+                  key="chart5-animated"
                   options={conversationsOptions}
                   series={conversationsSeries}
                   type="bar"
