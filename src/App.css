@@ -1,38 +1,366 @@
+/* Tinder Theme Colors */
+:root {
+  --tinder-pink: #FD2B7B;
+  --tinder-gray: #424242;
+  --tinder-orange: #FF7158;
+  --bg-light: #ffffff;
+  --bg-alt: #f8f8f8;
+  --text-primary: #424242;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
+  min-height: 100vh;
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--tinder-pink) 0%, var(--tinder-orange) 100%);
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  font-weight: 300;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* Section Styles */
+.section {
+  padding: 60px 20px;
+  background-color: var(--bg-light);
+}
+
+.section-alt {
+  background-color: var(--bg-alt);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--tinder-pink);
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--tinder-pink), var(--tinder-orange));
+  border-radius: 2px;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.stat-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid var(--tinder-pink);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--tinder-pink);
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Methodology Section */
+.methodology {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--tinder-orange);
+}
+
+.methodology h3 {
+  color: var(--tinder-gray);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.methodology p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Chart Cards */
+.chart-card {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  margin-bottom: 40px;
+  transition: box-shadow 0.3s ease;
+}
+
+.chart-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.chart-description {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-size: 1.05rem;
+  padding: 20px;
+  background-color: var(--bg-alt);
+  border-radius: 8px;
+  border-left: 4px solid var(--tinder-pink);
+}
+
+/* Insights Grid */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.insight-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  border-top: 4px solid var(--tinder-orange);
+}
+
+.insight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.insight-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.insight-card h3 {
+  color: var(--tinder-gray);
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.insight-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--tinder-gray);
+  color: white;
+  padding: 40px 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer-text {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  opacity: 0.9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.footer-text strong {
+  color: var(--tinder-pink);
+}
+
+.footer-note {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .stat-value {
+    font-size: 2.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card {
+    padding: 20px;
+  }
+
+  .chart-description {
+    padding: 15px;
+    font-size: 0.95rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 40px 15px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .methodology {
+    padding: 20px;
+  }
+
+  .chart-card {
+    padding: 15px;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
 }
 
-@keyframes App-logo-spin {
+/* ApexCharts Custom Styling */
+.apexcharts-tooltip {
+  background: white !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.apexcharts-tooltip-title {
+  background: var(--tinder-pink) !important;
+  color: white !important;
+  border-bottom: none !important;
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chart-card,
+.stat-card,
+.insight-card {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Print Styles */
+@media print {
+  .hero {
+    background: var(--tinder-pink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .chart-card,
+  .stat-card,
+  .insight-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }
