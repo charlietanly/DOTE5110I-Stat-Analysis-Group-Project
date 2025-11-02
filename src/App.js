@@ -70,14 +70,14 @@ function App() {
       animations: {
         enabled: true,
         easing: 'easeinout',
-        speed: 1200,
+        speed: 1500,
         animateGradually: {
           enabled: true,
-          delay: 150
+          delay: 200
         },
         dynamicAnimation: {
           enabled: true,
-          speed: 350
+          speed: 500
         }
       }
     },
@@ -123,10 +123,10 @@ function App() {
       animations: {
         enabled: true,
         easing: 'easeinout',
-        speed: 1200,
+        speed: 1500,
         animateGradually: {
           enabled: true,
-          delay: 150
+          delay: 200
         }
       }
     },
@@ -188,10 +188,10 @@ function App() {
       animations: {
         enabled: true,
         easing: 'easeinout',
-        speed: 1200,
+        speed: 1500,
         animateGradually: {
           enabled: true,
-          delay: 150
+          delay: 200
         }
       }
     },
@@ -249,10 +249,10 @@ function App() {
       animations: {
         enabled: true,
         easing: 'easeinout',
-        speed: 1200,
+        speed: 1500,
         animateGradually: {
           enabled: true,
-          delay: 150
+          delay: 200
         }
       }
     },
@@ -298,10 +298,10 @@ function App() {
       animations: {
         enabled: true,
         easing: 'easeinout',
-        speed: 1200,
+        speed: 1500,
         animateGradually: {
           enabled: true,
-          delay: 150
+          delay: 200
         }
       }
     },
