@@ -1,8 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Chart from 'react-apexcharts';
 import './App.css';
 
 function App() {
+  // State to track which charts are visible
+  const [visibleCharts, setVisibleCharts] = useState({
+    chart1: false,
+    chart2: false,
+    chart3: false,
+    chart4: false,
+    chart5: false
+  });
+
+  // Refs for each chart
+  const chart1Ref = useRef(null);
+  const chart2Ref = useRef(null);
+  const chart3Ref = useRef(null);
+  const chart4Ref = useRef(null);
+  const chart5Ref = useRef(null);
+
+  // Intersection Observer setup
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.2, // Trigger when 20% of the chart is visible
+      rootMargin: '0px'
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const chartId = entry.target.getAttribute('data-chart-id');
+          setVisibleCharts((prev) => ({ ...prev, [chartId]: true }));
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all chart refs
+    const refs = [chart1Ref, chart2Ref, chart3Ref, chart4Ref, chart5Ref];
+    refs.forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      refs.forEach((ref) => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, []);
   // Dataset Overview Statistics
   const datasetStats = {
     totalUsers: 1194,
@@ -17,7 +67,19 @@ function App() {
     chart: {
       type: 'bar',
       toolbar: { show: false },
-      animations: { enabled: true }
+      animations: {
+        enabled: true,
+        easing: 'easeinout',
+        speed: 1200,
+        animateGradually: {
+          enabled: true,
+          delay: 150
+        },
+        dynamicAnimation: {
+          enabled: true,
+          speed: 350
+        }
+      }
     },
     colors: ['#FD2B7B'],
     plotOptions: {
@@ -57,7 +119,16 @@ function App() {
   const swipeComparisonOptions = {
     chart: {
       type: 'bar',
-      toolbar: { show: false }
+      toolbar: { show: false },
+      animations: {
+        enabled: true,
+        easing: 'easeinout',
+        speed: 1200,
+        animateGradually: {
+          enabled: true,
+          delay: 150
+        }
+      }
     },
     colors: ['#FD2B7B', '#424242'],
     plotOptions: {
@@ -113,7 +184,16 @@ function App() {
       type: 'bar',
       stacked: true,
       stackType: '100%',
-      toolbar: { show: false }
+      toolbar: { show: false },
+      animations: {
+        enabled: true,
+        easing: 'easeinout',
+        speed: 1200,
+        animateGradually: {
+          enabled: true,
+          delay: 150
+        }
+      }
     },
     colors: ['#FD2B7B', '#424242'],
     plotOptions: {
@@ -165,7 +245,16 @@ function App() {
   const ghostingOptions = {
     chart: {
       type: 'bar',
-      toolbar: { show: false }
+      toolbar: { show: false },
+      animations: {
+        enabled: true,
+        easing: 'easeinout',
+        speed: 1200,
+        animateGradually: {
+          enabled: true,
+          delay: 150
+        }
+      }
     },
     colors: ['#FF7158'],
     plotOptions: {
@@ -205,7 +294,16 @@ function App() {
   const conversationsOptions = {
     chart: {
       type: 'bar',
-      toolbar: { show: false }
+      toolbar: { show: false },
+      animations: {
+        enabled: true,
+        easing: 'easeinout',
+        speed: 1200,
+        animateGradually: {
+          enabled: true,
+          delay: 150
+        }
+      }
     },
     colors: ['#FF7158'],
     plotOptions: {
@@ -284,16 +382,18 @@ function App() {
       <section className="section section-alt">
         <div className="container">
           <h2 className="section-title">Match Success by Demographics</h2>
-          <div className="chart-card">
+          <div className="chart-card" ref={chart1Ref} data-chart-id="chart1">
             <p className="chart-description">
               This chart shows how match rates vary across different age filter groups. Users who set their age preferences to younger ranges (18-30) tend to have slightly higher match rates compared to older age ranges, though the difference is relatively modest across groups.
             </p>
-            <Chart
-              options={matchRateByAgeOptions}
-              series={matchRateByAgeSeries}
-              type="bar"
-              height={400}
-            />
+            {visibleCharts.chart1 && (
+              <Chart
+                options={matchRateByAgeOptions}
+                series={matchRateByAgeSeries}
+                type="bar"
+                height={400}
+              />
+            )}
           </div>
         </div>
       </section>
@@ -303,28 +403,32 @@ function App() {
         <div className="container">
           <h2 className="section-title">Swipe Behavior Analysis</h2>
           
-          <div className="chart-card">
+          <div className="chart-card" ref={chart2Ref} data-chart-id="chart2">
             <p className="chart-description">
               Male users show significantly higher swipe activity than female users, both in terms of likes and passes. On average, males swipe right (like) approximately 4,892 times compared to females' 3,245 times. This pattern suggests males adopt a more active swiping strategy on the platform.
             </p>
-            <Chart
-              options={swipeComparisonOptions}
-              series={swipeComparisonSeries}
-              type="bar"
-              height={400}
-            />
+            {visibleCharts.chart2 && (
+              <Chart
+                options={swipeComparisonOptions}
+                series={swipeComparisonSeries}
+                type="bar"
+                height={400}
+              />
+            )}
           </div>
 
-          <div className="chart-card">
+          <div className="chart-card" ref={chart3Ref} data-chart-id="chart3">
             <p className="chart-description">
               When examining swipe behavior as percentages, we see that both genders are relatively similar in their like-to-pass ratios. Females like approximately 60.1% of profiles they view, while males like 58.8%, showing that despite different volumes, the selectivity patterns are quite similar between genders.
             </p>
-            <Chart
-              options={swipePercentageOptions}
-              series={swipePercentageSeries}
-              type="bar"
-              height={400}
-            />
+            {visibleCharts.chart3 && (
+              <Chart
+                options={swipePercentageOptions}
+                series={swipePercentageSeries}
+                type="bar"
+                height={400}
+              />
+            )}
           </div>
         </div>
       </section>
@@ -334,28 +438,32 @@ function App() {
         <div className="container">
           <h2 className="section-title">Engagement & Communication Patterns</h2>
           
-          <div className="chart-card">
+          <div className="chart-card" ref={chart4Ref} data-chart-id="chart4">
             <p className="chart-description">
               Ghosting behavior—when someone stops responding after the initial message—shows interesting gender differences. Female users experience an average of 12.4 ghostings compared to males' 8.7, suggesting that females may be more selective in continuing conversations after initial contact.
             </p>
-            <Chart
-              options={ghostingOptions}
-              series={ghostingSeries}
-              type="bar"
-              height={400}
-            />
+            {visibleCharts.chart4 && (
+              <Chart
+                options={ghostingOptions}
+                series={ghostingSeries}
+                type="bar"
+                height={400}
+              />
+            )}
           </div>
 
-          <div className="chart-card">
+          <div className="chart-card" ref={chart5Ref} data-chart-id="chart5">
             <p className="chart-description">
               Female users maintain more active conversations on average (24.3 conversations) compared to male users (18.9 conversations). This suggests that while males swipe more frequently, females tend to engage in more sustained messaging once a match is made.
             </p>
-            <Chart
-              options={conversationsOptions}
-              series={conversationsSeries}
-              type="bar"
-              height={400}
-            />
+            {visibleCharts.chart5 && (
+              <Chart
+                options={conversationsOptions}
+                series={conversationsSeries}
+                type="bar"
+                height={400}
+              />
+            )}
           </div>
         </div>
       </section>

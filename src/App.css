@@ -156,10 +156,17 @@
   box-shadow: var(--shadow);
   margin-bottom: 40px;
   transition: box-shadow 0.3s ease;
+  min-height: 500px; /* Reserve space for chart to prevent layout shift */
 }
 
 .chart-card:hover {
   box-shadow: var(--shadow-hover);
+}
+
+.chart-card[data-chart-id] {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .chart-description {
