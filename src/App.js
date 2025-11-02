@@ -22,8 +22,8 @@ function App() {
   // Intersection Observer setup
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.2, // Trigger when 20% of the chart is visible
-      rootMargin: '0px'
+      threshold: 0.3, // Trigger when 30% of the chart is visible
+      rootMargin: '-50px' // Start observing 50px before the element enters viewport
     };
 
     const observerCallback = (entries) => {
@@ -386,14 +386,16 @@ function App() {
             <p className="chart-description">
               This chart shows how match rates vary across different age filter groups. Users who set their age preferences to younger ranges (18-30) tend to have slightly higher match rates compared to older age ranges, though the difference is relatively modest across groups.
             </p>
-            {visibleCharts.chart1 && (
-              <Chart
-                options={matchRateByAgeOptions}
-                series={matchRateByAgeSeries}
-                type="bar"
-                height={400}
-              />
-            )}
+            <div className={`chart-wrapper ${visibleCharts.chart1 ? 'visible' : ''}`}>
+              {visibleCharts.chart1 && (
+                <Chart
+                  options={matchRateByAgeOptions}
+                  series={matchRateByAgeSeries}
+                  type="bar"
+                  height={400}
+                />
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -407,28 +409,32 @@ function App() {
             <p className="chart-description">
               Male users show significantly higher swipe activity than female users, both in terms of likes and passes. On average, males swipe right (like) approximately 4,892 times compared to females' 3,245 times. This pattern suggests males adopt a more active swiping strategy on the platform.
             </p>
-            {visibleCharts.chart2 && (
-              <Chart
-                options={swipeComparisonOptions}
-                series={swipeComparisonSeries}
-                type="bar"
-                height={400}
-              />
-            )}
+            <div className={`chart-wrapper ${visibleCharts.chart2 ? 'visible' : ''}`}>
+              {visibleCharts.chart2 && (
+                <Chart
+                  options={swipeComparisonOptions}
+                  series={swipeComparisonSeries}
+                  type="bar"
+                  height={400}
+                />
+              )}
+            </div>
           </div>
 
           <div className="chart-card" ref={chart3Ref} data-chart-id="chart3">
             <p className="chart-description">
               When examining swipe behavior as percentages, we see that both genders are relatively similar in their like-to-pass ratios. Females like approximately 60.1% of profiles they view, while males like 58.8%, showing that despite different volumes, the selectivity patterns are quite similar between genders.
             </p>
-            {visibleCharts.chart3 && (
-              <Chart
-                options={swipePercentageOptions}
-                series={swipePercentageSeries}
-                type="bar"
-                height={400}
-              />
-            )}
+            <div className={`chart-wrapper ${visibleCharts.chart3 ? 'visible' : ''}`}>
+              {visibleCharts.chart3 && (
+                <Chart
+                  options={swipePercentageOptions}
+                  series={swipePercentageSeries}
+                  type="bar"
+                  height={400}
+                />
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -442,28 +448,32 @@ function App() {
             <p className="chart-description">
               Ghosting behavior—when someone stops responding after the initial message—shows interesting gender differences. Female users experience an average of 12.4 ghostings compared to males' 8.7, suggesting that females may be more selective in continuing conversations after initial contact.
             </p>
-            {visibleCharts.chart4 && (
-              <Chart
-                options={ghostingOptions}
-                series={ghostingSeries}
-                type="bar"
-                height={400}
-              />
-            )}
+            <div className={`chart-wrapper ${visibleCharts.chart4 ? 'visible' : ''}`}>
+              {visibleCharts.chart4 && (
+                <Chart
+                  options={ghostingOptions}
+                  series={ghostingSeries}
+                  type="bar"
+                  height={400}
+                />
+              )}
+            </div>
           </div>
 
           <div className="chart-card" ref={chart5Ref} data-chart-id="chart5">
             <p className="chart-description">
               Female users maintain more active conversations on average (24.3 conversations) compared to male users (18.9 conversations). This suggests that while males swipe more frequently, females tend to engage in more sustained messaging once a match is made.
             </p>
-            {visibleCharts.chart5 && (
-              <Chart
-                options={conversationsOptions}
-                series={conversationsSeries}
-                type="bar"
-                height={400}
-              />
-            )}
+            <div className={`chart-wrapper ${visibleCharts.chart5 ? 'visible' : ''}`}>
+              {visibleCharts.chart5 && (
+                <Chart
+                  options={conversationsOptions}
+                  series={conversationsSeries}
+                  type="bar"
+                  height={400}
+                />
+              )}
+            </div>
           </div>
         </div>
       </section>
