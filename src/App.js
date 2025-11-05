@@ -299,25 +299,11 @@ function App() {
           </div>
           <div className="hero-right">
             <div className="iphone-mockup">
-              <div className="iphone-frame">
-                <div className="iphone-notch"></div>
-                <div className="iphone-screen">
-                  <div className="tinder-splash">
-                    <div className="tinder-logo">
-                      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                          <linearGradient id="flameGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style={{stopColor: '#FF7458', stopOpacity: 1}} />
-                            <stop offset="100%" style={{stopColor: '#FD3072', stopOpacity: 1}} />
-                          </linearGradient>
-                        </defs>
-                        <path d="M32 8 C20 8 12 18 12 28 C12 38 18 48 32 56 C46 48 52 38 52 28 C52 18 44 8 32 8 Z M32 12 C26 12 24 16 24 20 C24 18 20 16 20 24 C20 32 24 38 32 48 C40 38 44 32 44 24 C44 16 40 18 40 20 C40 16 38 12 32 12 Z" fill="url(#flameGradient)"/>
-                      </svg>
-                    </div>
-                    <h2 className="tinder-title">Tinder</h2>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src={`${process.env.PUBLIC_URL}/tinder-app.gif`} 
+                alt="Tinder App Interface" 
+                className="tinder-gif"
+              />
             </div>
           </div>
         </div>

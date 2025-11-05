@@ -110,9 +110,10 @@
 }
 
 .iphone-mockup {
-  max-width: 320px;
+  max-width: 400px;
   width: 100%;
   animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
 }
 
 @keyframes float {
@@ -124,95 +125,11 @@
   }
 }
 
-/* iPhone Frame */
-.iphone-frame {
-  position: relative;
+.tinder-gif {
   width: 100%;
-  aspect-ratio: 9 / 19;
-  background: #1a1a1a;
+  height: auto;
   border-radius: 45px;
-  padding: 12px;
-  box-shadow: 
-    0 0 0 2px #2d2d2d,
-    0 0 0 4px #1a1a1a,
-    0 20px 60px rgba(0, 0, 0, 0.4),
-    0 10px 30px rgba(0, 0, 0, 0.3),
-    inset 0 0 2px rgba(255, 255, 255, 0.1);
-}
-
-.iphone-notch {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 160px;
-  height: 30px;
-  background: #1a1a1a;
-  border-radius: 0 0 20px 20px;
-  z-index: 3;
-}
-
-.iphone-notch::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 4px;
-  background: #333;
-  border-radius: 2px;
-}
-
-.iphone-screen {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #FD2B7B 0%, #FF7158 100%);
-  border-radius: 38px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Tinder Splash Screen */
-.tinder-splash {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  text-align: center;
-}
-
-.tinder-logo {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 20px;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-.tinder-logo svg {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-}
-
-.tinder-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: white;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  letter-spacing: 1px;
+  display: block;
 }
 
 /* Section Styles */
@@ -412,59 +329,8 @@
   font-style: italic;
 }
 
-/* Responsive Design */
+/* Responsive Design - Keeping minimal styles for charts/content sections */
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    padding: 40px 20px;
-    gap: 40px;
-  }
-
-  .hero-left {
-    flex: 1;
-    width: 100%;
-  }
-
-  .hero-content {
-    text-align: center;
-  }
-
-  .hero-right {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .iphone-mockup {
-    max-width: 260px;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .group-members {
-    padding: 25px 30px;
-    font-size: 1rem;
-  }
-
-  .group-members p:first-child {
-    font-size: 1.1rem;
-  }
-
-  .tinder-logo {
-    width: 80px;
-    height: 80px;
-  }
-
-  .tinder-title {
-    font-size: 2rem;
-  }
-
   .section-title {
     font-size: 2rem;
   }
@@ -492,48 +358,6 @@
 }
 
 @media (max-width: 480px) {
-  .hero {
-    padding: 30px 15px;
-    gap: 30px;
-  }
-
-  .iphone-mockup {
-    max-width: 220px;
-  }
-
-  .hero-title {
-    font-size: 1.8rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 25px;
-  }
-
-  .group-members {
-    padding: 20px 25px;
-    font-size: 0.9rem;
-    margin-top: 25px;
-  }
-
-  .group-members p {
-    margin: 8px 0;
-  }
-
-  .group-members p:first-child {
-    font-size: 1rem;
-    margin-bottom: 15px;
-  }
-
-  .tinder-logo {
-    width: 60px;
-    height: 60px;
-  }
-
-  .tinder-title {
-    font-size: 1.8rem;
-  }
-
   .section {
     padding: 40px 15px;
   }
