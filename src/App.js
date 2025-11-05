@@ -493,7 +493,7 @@ function App() {
           <div className="hero-right">
             <div className="iphone-mockup">
               <img
-                src={`${process.env.PUBLIC_URL}/tinder-app-123.gif`}
+                src="https://i.imgur.com/dsKN1MF.gif"
                 alt="Tinder App Interface"
                 className="tinder-gif"
               />
