@@ -284,8 +284,12 @@ function App() {
             <h1 className="hero-title">Analysis of Tinder Profile Attributes and User Activity</h1>
             <p className="hero-subtitle">DOTE 5110 Statistical Analysis - Group 7</p>
             <div className="group-members">
-              <p>KWOK Tsz Him | CHUI Yin Tung Chimney | LIN Bei</p>
-              <p>TAN Lee Yan | TSANG Heung Chuen</p>
+              <p><strong>Group Members:</strong></p>
+              <p>KWOK Tsz Him (1155088739)</p>
+              <p>CHUI Yin Tung Chimney (1155244154)</p>
+              <p>LIN Bei (1155245080)</p>
+              <p>TAN Lee Yan (1155245076)</p>
+              <p>TSANG Heung Chuen (1155241248)</p>
             </div>
           </div>
           <button className="next-button" onClick={() => scrollToSection(dataRef)}>
