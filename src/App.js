@@ -280,21 +280,46 @@ function App() {
       {/* Hero Section */}
       <section ref={introRef} className="section hero-section">
         <div className="hero">
-          <div className="hero-content">
-            <h1 className="hero-title">Analysis of Tinder Profile Attributes and User Activity</h1>
-            <p className="hero-subtitle">DOTE 5110 Statistical Analysis - Group 7</p>
-            <div className="group-members">
-              <p><strong>Group Members:</strong></p>
-              <p>KWOK Tsz Him (1155088739)</p>
-              <p>CHUI Yin Tung Chimney (1155244154)</p>
-              <p>LIN Bei (1155245080)</p>
-              <p>TAN Lee Yan (1155245076)</p>
-              <p>TSANG Heung Chuen (1155241248)</p>
+          <div className="hero-left">
+            <div className="hero-content">
+              <h1 className="hero-title">Analysis of Tinder Profile Attributes and User Activity</h1>
+              <p className="hero-subtitle">DOTE 5110 Statistical Analysis - Group 7</p>
+              <div className="group-members">
+                <p><strong>Group Members:</strong></p>
+                <p>KWOK Tsz Him (1155088739)</p>
+                <p>CHUI Yin Tung Chimney (1155244154)</p>
+                <p>LIN Bei (1155245080)</p>
+                <p>TAN Lee Yan (1155245076)</p>
+                <p>TSANG Heung Chuen (1155241248)</p>
+              </div>
+            </div>
+            <button className="next-button" onClick={() => scrollToSection(dataRef)}>
+              Next Section ↓
+            </button>
+          </div>
+          <div className="hero-right">
+            <div className="iphone-mockup">
+              <div className="iphone-frame">
+                <div className="iphone-notch"></div>
+                <div className="iphone-screen">
+                  <div className="tinder-splash">
+                    <div className="tinder-logo">
+                      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <linearGradient id="flameGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style={{stopColor: '#FF7458', stopOpacity: 1}} />
+                            <stop offset="100%" style={{stopColor: '#FD3072', stopOpacity: 1}} />
+                          </linearGradient>
+                        </defs>
+                        <path d="M32 8 C20 8 12 18 12 28 C12 38 18 48 32 56 C46 48 52 38 52 28 C52 18 44 8 32 8 Z M32 12 C26 12 24 16 24 20 C24 18 20 16 20 24 C20 32 24 38 32 48 C40 38 44 32 44 24 C44 16 40 18 40 20 C40 16 38 12 32 12 Z" fill="url(#flameGradient)"/>
+                      </svg>
+                    </div>
+                    <h2 className="tinder-title">Tinder</h2>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <button className="next-button" onClick={() => scrollToSection(dataRef)}>
-            Next Section ↓
-          </button>
         </div>
       </section>
 
