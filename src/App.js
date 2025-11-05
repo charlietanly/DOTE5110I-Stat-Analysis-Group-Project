@@ -493,7 +493,7 @@ function App() {
           <div className="hero-right">
             <div className="iphone-mockup">
               <img
-                src="https://i.imgur.com/dsKN1MF.gif"
+                src="https://imgur.com/a/9EhLhGW"
                 alt="Tinder App Interface"
                 className="tinder-gif"
               />
