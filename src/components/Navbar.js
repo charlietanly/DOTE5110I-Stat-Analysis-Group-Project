@@ -2,12 +2,47 @@ import React from 'react';
 import './Navbar.css';
 
 function Navbar({ activeSection, scrollToSection, refs }) {
-  const { introRef, dataRef, behaviorRef, swipeSplitRef, messagingSplitRef, matchingStatsRef, matchRef, regressionRef, findingsRef } = refs;
-
+  const {
+    introRef,
+    dataRef,
+    behaviorRef,
+    behaviorRef2,      // ✅ Add this
+    behaviorRef3,      // ✅ Add this
+    swipeSplitRef,
+    messagingSplitRef,
+    matchingStatsRef,
+    matchRef,
+    regressionRef,
+    findingsRef
+  } = refs;
   // Section order for next button
-  const sectionRefs = [introRef, dataRef, behaviorRef, swipeSplitRef, messagingSplitRef, matchingStatsRef, matchRef, regressionRef, findingsRef];
-  const sectionIds = ['intro', 'data', 'behavior', 'swipe-split', 'messaging-split', 'matching', 'match', 'regression', 'findings'];
+  const sectionRefs = [
+    introRef,
+    dataRef,
+    behaviorRef,
+    swipeSplitRef,
+    behaviorRef2,      // ✅ Add this (after swipeSplitRef)
+    messagingSplitRef,
+    behaviorRef3,      // ✅ Add this (after messagingSplitRef)
+    matchingStatsRef,
+    matchRef,
+    regressionRef,
+    findingsRef
+  ];
 
+  const sectionIds = [
+    'intro',
+    'data',
+    'behavior',
+    'swipe-split',
+    'behavior2',       // ✅ Add this
+    'messaging-split',
+    'behavior3',       // ✅ Add this
+    'matching',
+    'match',
+    'regression',
+    'findings'
+  ];
   const scrollToNext = () => {
     const currentIndex = sectionIds.indexOf(activeSection);
     if (currentIndex < sectionRefs.length - 1) {

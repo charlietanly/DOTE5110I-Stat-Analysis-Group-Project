@@ -68,12 +68,15 @@ function App() {
   // Scroll spy for navbar
   useEffect(() => {
     const handleScroll = () => {
+
       const sections = [
         { id: 'intro', ref: introRef },
         { id: 'data', ref: dataRef },
         { id: 'behavior', ref: behaviorRef1 },
         { id: 'swipe-split', ref: swipeSplitRef },
+        { id: 'behavior2', ref: behaviorRef2 },        // ✅ ADD THIS
         { id: 'messaging-split', ref: messagingSplitRef },
+        { id: 'behavior3', ref: behaviorRef3 },        // ✅ ADD THIS
         { id: 'matching', ref: matchingStatsRef },
         { id: 'match', ref: matchRef },
         { id: 'regression', ref: regressionRef },

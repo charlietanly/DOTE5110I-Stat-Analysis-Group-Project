@@ -36,9 +36,11 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: 100%; 
 }
 
 .key-findings-cards .card {
+  height: 100%;
   flex: 1;                /* ✅ Make each card take equal width */
   min-width: 0;           /* ✅ Allow cards to shrink if needed */
 }
