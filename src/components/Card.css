@@ -1,0 +1,134 @@
+/* Base Card Styles */
+.card {
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Content */
+.card-icon {
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #424242;
+}
+
+.card-description {
+  line-height: 1.6;
+  color: #666;
+  text-align: center;
+}
+
+/* Variant: Default (White) */
+.card-default {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card-default .card-icon {
+  font-size: 60px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.card-default .card-title {
+  font-size: 22px;
+}
+
+.card-default .card-description {
+  font-size: 24px;
+  text-align: center;
+}
+
+.card-default:hover {
+  box-shadow: 0 8px 20px rgba(253, 43, 123, 0.2);
+}
+
+/* Variant: Gradient (Pink) - Now matches FindingsSection style */
+.card-gradient {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card-gradient .card-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.card-gradient .card-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #424242;
+  margin-bottom: 15px;
+}
+
+.card-gradient .card-description {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #555;
+  text-align: center;
+}
+
+.card-gradient:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(253, 43, 123, 0.2);
+}
+
+/* Variant: Split (Inline layout) */
+.card-split {
+  background: linear-gradient(135deg, rgba(253, 43, 123, 0.1), rgba(255, 113, 88, 0.1));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(253, 43, 123, 0.2);
+  text-align: center;
+}
+
+.card-split .card-icon {
+  font-size: 28px;
+}
+
+.card-split .card-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.card-split .card-description {
+  font-size: 13px;
+  color: #555;
+}
+
+.card-split:hover {
+  box-shadow: 0 10px 25px rgba(253, 43, 123, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-default,
+  .card-gradient {
+    padding: 20px;
+  }
+  
+  .card-default .card-icon,
+  .card-gradient .card-icon {
+    font-size: 50px;
+  }
+  
+  .card-default .card-title,
+  .card-gradient .card-title {
+    font-size: 20px;
+  }
+}
+

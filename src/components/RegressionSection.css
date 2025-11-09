@@ -1,0 +1,160 @@
+/* Regression Section Styles */
+.regression-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.regression-column-left,
+.regression-column-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.regression-column-left h3,
+.regression-column-right h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #424242;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.model-equations {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.model-equations p {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 2;
+  margin: 10px 0;
+  color: #424242;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin: 25px 0;
+  /* max-height: 600px;  */
+}
+
+.regression-table,
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.regression-table thead,
+.results-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.regression-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.results-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.regression-table td {
+  padding: 8px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 12px;
+  color: #424242;
+}
+
+.results-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  color: #424242;
+}
+
+.regression-table tbody tr:hover,
+.results-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.std-error {
+  font-size: 12px;
+  color: #888;
+}
+
+.separator-row {
+  height: 10px;
+  background: #f8f9fa;
+}
+
+.table-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #666;
+  font-style: italic;
+}
+
+.highlight-row {
+  background: #FFF5F7 !important;
+  font-weight: 800;
+}
+
+.highlight-row td {
+  color: #FD2B7B;
+}
+
+.model-conclusion {
+  background: linear-gradient(135deg, #FFF5F7 0%, #FFE8ED 100%);
+  border-left: 4px solid #FD2B7B;
+  padding: 25px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #424242;
+}
+
+@media (max-width: 1024px) {
+  .regression-two-column {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .regression-table,
+  .results-table {
+    font-size: 12px;
+  }
+
+  .regression-table th,
+  .results-table th,
+  .regression-table td,
+  .results-table td {
+    padding: 10px;
+  }
+
+  .model-equations p {
+    font-size: 12px;
+  }
+
+  .regression-column-left h3,
+  .regression-column-right h3 {
+    font-size: 18px;
+  }
+}
+

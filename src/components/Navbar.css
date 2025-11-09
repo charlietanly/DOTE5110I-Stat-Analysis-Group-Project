@@ -1,0 +1,117 @@
+/* Fixed Navbar Styles */
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(253, 43, 123, 0.15);
+  z-index: 1000;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(253, 43, 123, 0.1);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 5px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-list li {
+  margin: 0;
+}
+
+.nav-list li a {
+  display: block;
+  padding: 20px 18px;
+  text-decoration: none;
+  color: #424242;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s ease, background 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-list li a:hover {
+  color: #FD2B7B;
+  background: rgba(253, 43, 123, 0.05);
+}
+
+.nav-list li.active a {
+  color: #FD2B7B;
+  border-bottom-color: #FD2B7B;
+  background: rgba(253, 43, 123, 0.05);
+}
+
+/* Next Section Button */
+.next-section-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #FD2B7B 0%, #FF7158 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(253, 43, 123, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.next-section-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(253, 43, 123, 0.5);
+}
+
+.next-section-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+@media (max-width: 968px) {
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .nav-list li a {
+    padding: 15px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-list {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .nav-list li a {
+    padding: 15px 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .next-section-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    right: 10px;
+  }
+}
+

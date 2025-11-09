@@ -1,0 +1,85 @@
+/* Match Success Section Styles */
+.match-success-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.boxplot-container {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.boxplot-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.boxplot-container .chart-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.boxplot-container .chart-description {
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.key-findings-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.key-findings-cards .card {
+  flex: 1;                /* ✅ Make each card take equal width */
+  min-width: 0;           /* ✅ Allow cards to shrink if needed */
+}
+
+.finding-card {
+  /* flex: 1; */
+  background: linear-gradient(135deg, rgba(253, 43, 123, 0.1), rgba(255, 113, 88, 0.1));
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid rgba(253, 43, 123, 0.2);
+  transition: all 0.3s ease;
+}
+
+.finding-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(253, 43, 123, 0.2);
+}
+
+.finding-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.finding-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #424242;
+}
+
+.finding-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+@media (max-width: 1024px) {
+  .match-success-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+

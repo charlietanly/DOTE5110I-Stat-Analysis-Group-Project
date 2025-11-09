@@ -1,0 +1,35 @@
+/* Footer Styles */
+.footer {
+  background: #2d2d2d;
+  color: white;
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+.footer-text {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.footer-text a {
+  color: #FD2B7B;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-text a:hover {
+  color: #ff6b9d;
+  text-decoration: underline;
+}
+
+.footer-note {
+  font-size: 13px;
+  color: #aaa;
+  text-align: center;
+  margin-top: 15px;
+  font-style: italic;
+}
+

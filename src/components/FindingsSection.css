@@ -1,0 +1,58 @@
+/* Findings Section Styles */
+.findings-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.finding-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.finding-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(253, 43, 123, 0.2);
+}
+
+.finding-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.finding-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #424242;
+  margin-bottom: 15px;
+}
+
+.finding-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .findings-grid-2x2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .finding-icon {
+    font-size: 50px;
+  }
+
+  .finding-card h3 {
+    font-size: 20px;
+  }
+}
+

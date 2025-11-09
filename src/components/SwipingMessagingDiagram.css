@@ -1,0 +1,225 @@
+/* Swiping Messaging Diagram Styles */
+.swiping-messaging-diagram {
+  margin: 40px auto 60px;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, rgba(253, 43, 123, 0.05) 0%, rgba(255, 113, 88, 0.05) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(253, 43, 123, 0.1);
+  border-radius: 20px;
+  max-width: 1000px;
+}
+
+.swiping-messaging-diagram-large {
+  height: 100vh;
+  max-width: 100%;
+  padding: 80px 0px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.diagram-title {
+  font-size: 42px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #FD2B7B 0%, #FF7158 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: -1px;
+}
+
+.swiping-messaging-diagram-large .diagram-title {
+  font-size: 56px;
+  margin-bottom: 80px;
+}
+
+.diagram-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+}
+
+.diagram-flow-spaced {
+  gap: 80px;
+}
+
+.diagram-circle {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.diagram-circle:hover {
+  transform: scale(1.05);
+}
+
+.swiping-messaging-diagram-large .diagram-circle {
+  width: 350px;
+  height: 350px;
+}
+
+.diagram-circle-clickable {
+  cursor: pointer;
+}
+
+.diagram-circle-clickable:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.diagram-circle-clickable:active {
+  transform: scale(1.05);
+}
+
+.diagram-circle-left {
+  background: linear-gradient(135deg, #E85A8A 0%, #FD2B7B 100%);
+  box-shadow: 0 10px 40px rgba(253, 43, 123, 0.4),
+              0 0 60px rgba(253, 43, 123, 0.2);
+}
+
+.diagram-circle-right {
+  background: linear-gradient(135deg, #FF7158 0%, #FD2B7B 100%);
+  box-shadow: 0 10px 40px rgba(255, 113, 88, 0.4),
+              0 0 60px rgba(255, 113, 88, 0.2);
+}
+
+.diagram-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.diagram-label {
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.diagram-connector {
+  width: 200px;
+  height: 100px;
+  background: linear-gradient(135deg, #5a5a5a 0%, #424242 100%);
+  position: relative;
+  z-index: 1;
+  margin: 0 -40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  transition: all 0.3s ease;
+}
+
+.diagram-connector-arrow {
+  width: 250px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  clip-path: none;
+  background: transparent;
+}
+
+.swiping-messaging-diagram-large .diagram-connector-arrow {
+  width: 350px;
+}
+
+.arrow-left,
+.arrow-right {
+  font-size: 48px;
+  font-weight: 700;
+  color: #424242;
+  transition: all 0.3s ease;
+}
+
+.diagram-dimmed .arrow-left,
+.diagram-dimmed .arrow-right {
+  color: #d0d0d0;
+}
+
+.connector-label {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.diagram-connector-arrow .connector-label {
+  color: #FD2B7B;
+  transition: all 0.3s ease;
+}
+
+.diagram-dimmed .diagram-connector-arrow .connector-label {
+  color: #d0d0d0;
+}
+
+/* Dimmed state for highlighting */
+.diagram-dimmed {
+  filter: grayscale(100%) brightness(0.6);
+  opacity: 0.3;
+}
+
+.diagram-hint {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .swiping-messaging-diagram {
+    padding: 40px 20px;
+  }
+  
+  .diagram-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  .diagram-flow {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .diagram-circle {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .diagram-icon {
+    font-size: 60px;
+  }
+  
+  .diagram-label {
+    font-size: 28px;
+  }
+  
+  .diagram-connector {
+    width: 100px;
+    height: 150px;
+    margin: -20px 0;
+    clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+  }
+  
+  .connector-label {
+    font-size: 22px;
+  }
+}
+
