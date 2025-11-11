@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import HeroSection from './components/HeroSection';
 import MatchSuccessSection from './components/MatchSuccessSection';
 import MatchingStatsSection from './components/MatchingStatsSection';
+import Model2InsightsSection from './components/Model2InsightsSection';
+import ModelDefinitionsSection from './components/ModelDefinitionsSection';
 import Navbar from './components/Navbar';
 import RegressionSection from './components/RegressionSection';
 import SwipeBehaviorSection from './components/SwipeBehaviorSection';
@@ -43,7 +45,9 @@ function App() {
   const behaviorRef3 = useRef(null);
   const matchingStatsRef = useRef(null);
   const matchRef = useRef(null);
+  const modelDefRef = useRef(null);
   const regressionRef = useRef(null);
+  const model2InsightsRef = useRef(null);
   const findingsRef = useRef(null);
 
   // Refs for each chart
@@ -56,11 +60,11 @@ function App() {
   const statsCardRef = useRef(null);
 
   // Smooth scroll to section function
-  const scrollToSection = (ref) => {
+  const scrollToSection = (ref, alignToCenter = false) => {
     if (ref && ref.current) {
       ref.current.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: alignToCenter ? 'center' : 'start'
       });
     }
   };
@@ -74,22 +78,27 @@ function App() {
         { id: 'data', ref: dataRef },
         { id: 'behavior', ref: behaviorRef1 },
         { id: 'swipe-split', ref: swipeSplitRef },
-        { id: 'behavior2', ref: behaviorRef2 },        // ✅ ADD THIS
+        { id: 'behavior2', ref: behaviorRef2 },
         { id: 'messaging-split', ref: messagingSplitRef },
-        { id: 'behavior3', ref: behaviorRef3 },        // ✅ ADD THIS
+        { id: 'behavior3', ref: behaviorRef3 },
         { id: 'matching', ref: matchingStatsRef },
         { id: 'match', ref: matchRef },
+        { id: 'model-def', ref: modelDefRef },
         { id: 'regression', ref: regressionRef },
+        { id: 'model2-insights', ref: model2InsightsRef },
         { id: 'findings', ref: findingsRef }
       ];
 
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
-        if (section.ref.current && section.ref.current.offsetTop <= scrollPosition) {
-          setActiveSection(section.id);
-          break;
+        if (section.ref.current) {
+          const sectionTop = section.ref.current.getBoundingClientRect().top + window.scrollY;
+          if (sectionTop <= scrollPosition) {
+            setActiveSection(section.id);
+            break;
+          }
         }
       }
     };
@@ -423,11 +432,11 @@ function App() {
   const stackedByAgeSeries = [
     {
       name: 'Swipe Likes',
-      data: [5, 5, 8, 4, 14, 28, 44, 38, 38, 27, 26, 28]
+      data: [5, 4, 8, 3, 14, 0, 44, 38, 36, 27, 25, 27]
     },
     {
       name: 'Swipe Passes',
-      data: [95, 95, 92, 96, 86, 72, 56, 62, 62, 73, 74, 72]
+      data: [95, 96, 92, 97, 86, 0, 56, 62, 64, 73, 75, 73]
     }
   ];
 
@@ -441,7 +450,9 @@ function App() {
     behaviorRef3,
     matchingStatsRef,
     matchRef,
+    modelDefRef,
     regressionRef,
+    model2InsightsRef,
     findingsRef
   };
 
@@ -544,12 +555,26 @@ function App() {
         visibleCharts={visibleCharts}
       />
 
+      {/* Section 9: Model Definitions */}
+      <ModelDefinitionsSection
+        modelDefRef={modelDefRef}
+        scrollToSection={scrollToSection}
+        regressionRef={regressionRef}
+      />
+
+      {/* Section 10: Regression Analysis */}
       <RegressionSection
         regressionRef={regressionRef}
         scrollToSection={scrollToSection}
         findingsRef={findingsRef}
       />
 
+      {/* Section 11: Model 2 Insights */}
+      <Model2InsightsSection
+        model2InsightsRef={model2InsightsRef}
+      />
+
+      {/* Section 12: Key Findings & Conclusion */}
       <FindingsSection
         findingsRef={findingsRef}
       />

@@ -6,19 +6,10 @@ function RegressionSection({ regressionRef, scrollToSection, findingsRef }) {
     <section ref={regressionRef} className="section section-alt">
       <div className="container">
         <h2 className="section-title">Regression Analysis & Prediction Model</h2>
-        {/* <p className="section-intro">
-          Based on the EDA findings, we developed regression models to predict match rate using demographic data,
-          swiping behavior, and messaging behavior.
-        </p> */}
 
         <div className="regression-two-column">
           <div className="regression-column-left">
-            {/* <h3>Model Definitions</h3>
-            <div className="model-equations">
-              <p><strong>Model 1:</strong> match_rate ~ user_age + gender + education</p>
-              <p><strong>Model 2:</strong> match_rate ~ user_age + gender + education + swipe_likes + swipe_passes + ageFilterMin + ageFilterMax</p>
-              <p><strong>Model 3:</strong> match_rate ~ user_age + gender + education + swipe_likes + swipe_passes + ageFilterMin + ageFilterMax + no_of_msgs_sent + no_of_msgs_received + nrOfConversations + longestConversation + percentOfOneMessageConversations</p>
-            </div> */}
+
 
             <h4>Detailed Regression Coefficients</h4>
             <div className="table-wrapper">
@@ -243,9 +234,7 @@ function RegressionSection({ regressionRef, scrollToSection, findingsRef }) {
                 </tbody>
               </table>
             </div>
-            <p className="model-conclusion">
-              <strong>Men have a match rate that is 56.9% lower than that of women</strong>. For women, for every 1-year increase in age, a woman's match rate decreases by 1%. For men, the effect of age is the sum of user_age and the interaction term gender[T.M]:user_age, which is (-0.010 + 0.008) = -0.002. This shows that age has a small but statistically significant negative impact on women's match rates; <strong>for men, this negative effect is almost entirely canceled out</strong>.
-            </p>
+
 
           </div>
         </div>

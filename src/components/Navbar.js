@@ -6,13 +6,15 @@ function Navbar({ activeSection, scrollToSection, refs }) {
     introRef,
     dataRef,
     behaviorRef,
-    behaviorRef2,      // ✅ Add this
-    behaviorRef3,      // ✅ Add this
+    behaviorRef2,
+    behaviorRef3,
     swipeSplitRef,
     messagingSplitRef,
     matchingStatsRef,
     matchRef,
+    modelDefRef,
     regressionRef,
+    model2InsightsRef,
     findingsRef
   } = refs;
   // Section order for next button
@@ -21,12 +23,14 @@ function Navbar({ activeSection, scrollToSection, refs }) {
     dataRef,
     behaviorRef,
     swipeSplitRef,
-    behaviorRef2,      // ✅ Add this (after swipeSplitRef)
+    behaviorRef2,
     messagingSplitRef,
-    behaviorRef3,      // ✅ Add this (after messagingSplitRef)
+    behaviorRef3,
     matchingStatsRef,
     matchRef,
+    modelDefRef,
     regressionRef,
+    model2InsightsRef,
     findingsRef
   ];
 
@@ -35,18 +39,22 @@ function Navbar({ activeSection, scrollToSection, refs }) {
     'data',
     'behavior',
     'swipe-split',
-    'behavior2',       // ✅ Add this
+    'behavior2',
     'messaging-split',
-    'behavior3',       // ✅ Add this
+    'behavior3',
     'matching',
     'match',
+    'model-def',
     'regression',
+    'model2-insights',
     'findings'
   ];
   const scrollToNext = () => {
     const currentIndex = sectionIds.indexOf(activeSection);
     if (currentIndex < sectionRefs.length - 1) {
-      scrollToSection(sectionRefs[currentIndex + 1]);
+      const nextSectionId = sectionIds[currentIndex + 1];
+      const shouldCenter = nextSectionId === 'swipe-split' || nextSectionId === 'messaging-split';
+      scrollToSection(sectionRefs[currentIndex + 1], shouldCenter);
     }
   };
 
@@ -63,10 +71,10 @@ function Navbar({ activeSection, scrollToSection, refs }) {
           <a href="#behavior" onClick={(e) => { e.preventDefault(); scrollToSection(behaviorRef); }}>Behavior</a>
         </li>
         <li className={activeSection === 'swipe-split' ? 'active' : ''}>
-          <a href="#swipe-split" onClick={(e) => { e.preventDefault(); scrollToSection(swipeSplitRef); }}>Swiping</a>
+          <a href="#swipe-split" onClick={(e) => { e.preventDefault(); scrollToSection(swipeSplitRef, true); }}>Swiping</a>
         </li>
         <li className={activeSection === 'messaging-split' ? 'active' : ''}>
-          <a href="#messaging-split" onClick={(e) => { e.preventDefault(); scrollToSection(messagingSplitRef); }}>Messaging</a>
+          <a href="#messaging-split" onClick={(e) => { e.preventDefault(); scrollToSection(messagingSplitRef, true); }}>Messaging</a>
         </li>
         <li className={activeSection === 'matching' ? 'active' : ''}>
           <a href="#matching" onClick={(e) => { e.preventDefault(); scrollToSection(matchingStatsRef); }}>Matching</a>
@@ -74,8 +82,14 @@ function Navbar({ activeSection, scrollToSection, refs }) {
         <li className={activeSection === 'match' ? 'active' : ''}>
           <a href="#match" onClick={(e) => { e.preventDefault(); scrollToSection(matchRef); }}>Match Success</a>
         </li>
+        <li className={activeSection === 'model-def' ? 'active' : ''}>
+          <a href="#model-def" onClick={(e) => { e.preventDefault(); scrollToSection(modelDefRef); }}>Models</a>
+        </li>
         <li className={activeSection === 'regression' ? 'active' : ''}>
           <a href="#regression" onClick={(e) => { e.preventDefault(); scrollToSection(regressionRef); }}>Regression</a>
+        </li>
+        <li className={activeSection === 'model2-insights' ? 'active' : ''}>
+          <a href="#model2-insights" onClick={(e) => { e.preventDefault(); scrollToSection(model2InsightsRef); }}>Insights</a>
         </li>
         <li className={activeSection === 'findings' ? 'active' : ''}>
           <a href="#findings" onClick={(e) => { e.preventDefault(); scrollToSection(findingsRef); }}>Findings</a>

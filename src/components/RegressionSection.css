@@ -43,7 +43,8 @@
 }
 
 .regression-table,
-.results-table {
+.results-table,
+.model-definitions-table {
   width: 100%;
   border-collapse: collapse;
   background: white;
@@ -53,7 +54,8 @@
 }
 
 .regression-table thead,
-.results-table thead {
+.results-table thead,
+.model-definitions-table thead {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
 }
@@ -87,8 +89,45 @@
 }
 
 .regression-table tbody tr:hover,
-.results-table tbody tr:hover {
+.results-table tbody tr:hover,
+.model-definitions-table tbody tr:hover {
   background: #f8f9fa;
+}
+
+.model-definitions-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.model-definitions-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 13px;
+  color: #424242;
+  vertical-align: top;
+}
+
+.model-definitions-table td:first-child {
+  width: 100px;
+  white-space: nowrap;
+}
+
+.model-definitions-table td:last-child {
+  font-family: 'Courier New', Consolas, monospace;
+  line-height: 1.6;
+}
+
+.model-definitions-table code {
+  background: #f8f9fa;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #424242;
+  word-wrap: break-word;
+  white-space: normal;
+  display: inline-block;
 }
 
 .std-error {

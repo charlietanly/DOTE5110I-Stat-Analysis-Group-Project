@@ -1,0 +1,95 @@
+/* Model Definitions Section Styles - Updated v2 */
+.model-definitions-container {
+  margin: 40px auto 150px;
+  max-width: 1200px;
+  padding-bottom: 100px;
+}
+
+/* Override section alignment for proper scrolling */
+.model-def-section {
+  align-items: flex-start !important;
+  min-height: 100vh !important;
+  display: block !important;
+  padding: 80px 20px 100px !important;
+  overflow: visible !important;
+  position: relative;
+  height: auto !important;
+}
+
+.model-def-section .container {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.model-definitions-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.model-definitions-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.model-definitions-table th {
+  padding: 30px 45px !important;
+  text-align: left;
+  font-weight: 600;
+  font-size: 24px !important;
+}
+
+.model-definitions-table td {
+  padding: 30px 50px !important;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 18px !important;
+  color: #424242;
+  vertical-align: top;
+}
+
+.model-definitions-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.model-definitions-table td:first-child {
+  width: 180px;
+  white-space: nowrap;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.model-definitions-table td:last-child {
+  font-family: 'Courier New', Consolas, monospace;
+  line-height: 2.2;
+}
+
+.model-definitions-table code {
+  background: #f8f9fa;
+  padding: 10px 15px !important;
+  border-radius: 6px;
+  font-size: 20px !important;
+  color: #424242;
+  word-wrap: break-word;
+  white-space: normal;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .model-definitions-table {
+    font-size: 12px;
+  }
+
+  .model-definitions-table th,
+  .model-definitions-table td {
+    padding: 12px;
+  }
+
+  .model-definitions-table code {
+    font-size: 22px;
+  }
+}
+
