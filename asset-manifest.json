@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DOTE5110I-Stat-Analysis-Group-Project/static/css/main.3238d890.css",
+    "main.js": "/DOTE5110I-Stat-Analysis-Group-Project/static/js/main.3c029bd5.js",
+    "static/js/453.67167e7c.chunk.js": "/DOTE5110I-Stat-Analysis-Group-Project/static/js/453.67167e7c.chunk.js",
+    "index.html": "/DOTE5110I-Stat-Analysis-Group-Project/index.html",
+    "main.3238d890.css.map": "/DOTE5110I-Stat-Analysis-Group-Project/static/css/main.3238d890.css.map",
+    "main.3c029bd5.js.map": "/DOTE5110I-Stat-Analysis-Group-Project/static/js/main.3c029bd5.js.map",
+    "453.67167e7c.chunk.js.map": "/DOTE5110I-Stat-Analysis-Group-Project/static/js/453.67167e7c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3238d890.css",
+    "static/js/main.3c029bd5.js"
+  ]
+}
