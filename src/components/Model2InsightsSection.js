@@ -16,7 +16,7 @@ function Model2InsightsSection({ model2InsightsRef }) {
                     <div className="insight-card">
                         <div className="insight-header">
                             <span className="insight-icon">👩‍🎓</span>
-                            <h3>Female with Education</h3>
+                            <h3>Female with High School or College Education</h3>
                         </div>
                         <div className="insight-body">
                             <div className="insight-metric">
@@ -27,7 +27,6 @@ function Model2InsightsSection({ model2InsightsRef }) {
                                 <span className="metric-label">Age Effect (per year)</span>
                                 <span className="metric-value negative">-1.0%</span>
                             </div>
-                            <p className="insight-note">Highly significant effect</p>
                         </div>
                     </div>
 
@@ -35,7 +34,7 @@ function Model2InsightsSection({ model2InsightsRef }) {
                     <div className="insight-card">
                         <div className="insight-header">
                             <span className="insight-icon">👨‍🎓</span>
-                            <h3>Male with Education</h3>
+                            <h3>Male with High School or College Education</h3>
                         </div>
                         <div className="insight-body">
                             <div className="insight-metric">
@@ -46,7 +45,6 @@ function Model2InsightsSection({ model2InsightsRef }) {
                                 <span className="metric-label">Age Effect (per year)</span>
                                 <span className="metric-value negative">-0.2%</span>
                             </div>
-                            <p className="insight-note">Significant effect</p>
                         </div>
                     </div>
 
@@ -54,7 +52,7 @@ function Model2InsightsSection({ model2InsightsRef }) {
                     <div className="insight-card insignificant">
                         <div className="insight-header">
                             <span className="insight-icon">👩</span>
-                            <h3>Female without Education</h3>
+                            <h3>Female without High School or College Education</h3>
                         </div>
                         <div className="insight-body">
                             <div className="insight-metric">
@@ -65,9 +63,6 @@ function Model2InsightsSection({ model2InsightsRef }) {
                                 <span className="metric-label">Age Effect (per year)</span>
                                 <span className="metric-value negative">-1.1%</span>
                             </div>
-                            <p className="insight-note insignificant-note">
-                                <span className="asterisk">*</span> Statistically insignificant
-                            </p>
                         </div>
                     </div>
 
@@ -75,7 +70,7 @@ function Model2InsightsSection({ model2InsightsRef }) {
                     <div className="insight-card insignificant">
                         <div className="insight-header">
                             <span className="insight-icon">👨</span>
-                            <h3>Male without Education</h3>
+                            <h3>Male without High School or College Education</h3>
                         </div>
                         <div className="insight-body">
                             <div className="insight-metric">
@@ -86,9 +81,6 @@ function Model2InsightsSection({ model2InsightsRef }) {
                                 <span className="metric-label">Age Effect (per year)</span>
                                 <span className="metric-value negative">-0.3%</span>
                             </div>
-                            <p className="insight-note insignificant-note">
-                                <span className="asterisk">*</span> Statistically insignificant
-                            </p>
                         </div>
                     </div>
                 </div>

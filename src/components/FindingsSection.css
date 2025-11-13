@@ -9,11 +9,17 @@
   margin-right: auto;
 }
 
-.findings-grid-flip .flip-card:last-child {
+.findings-grid-flip .flip-card:nth-child(3) {
   grid-column: 1 / -1;
   max-width: 900px;
   margin: 0 auto;
   width: 100%;
+}
+
+/* Last two cards (4 and 5) remain in 2-column layout */
+.findings-grid-flip .flip-card:nth-child(4),
+.findings-grid-flip .flip-card:nth-child(5) {
+  grid-column: auto;
 }
 
 /* Flip Card Container */
@@ -94,6 +100,16 @@
 .flip-card-front {
   background: linear-gradient(135deg, #FD2B7B 30%, #FF7158 100%);
   color: white;
+}
+
+/* Male Card - Different Color */
+.flip-card:last-child .flip-card-front {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.flip-card:last-child:hover .flip-card-front,
+.flip-card:last-child:hover .flip-card-back {
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.35);
 }
 
 .flip-card-icon {
